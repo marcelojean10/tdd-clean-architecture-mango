@@ -17,6 +17,7 @@ export const MongoHelper = {
 
   map: (collection: any, id: any): any => {
     const identifierResult = id.insertedId.toHexString()
+    delete collection._id
     return Object.assign({}, collection, { id: identifierResult })
   }
 }
